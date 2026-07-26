@@ -39,7 +39,11 @@ st.markdown(
 html, body, [class*="css"] {font-family:'Inter',sans-serif}
 .stApp {background:linear-gradient(180deg,#F8FAFD 0%,#EAF1F7 100%)}
 [data-testid="stSidebar"] {background:linear-gradient(180deg,#081F3A,#124A78)}
-[data-testid="stSidebar"] * {color:#F7FAFC!important}
+[data-testid="stSidebar"] {color:#F7FAFC}
+[data-testid="stSidebar"] h1,[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,[data-testid="stSidebar"] li,[data-testid="stSidebar"] small {
+ color:#F7FAFC;
+}
 .hero {background:linear-gradient(120deg,#071A2F 0%,#0B3B67 58%,#A97908 145%);
  padding:30px 34px;border-radius:22px;color:white;box-shadow:0 14px 34px rgba(7,26,47,.22);
  margin-bottom:16px;border:1px solid rgba(243,200,75,.35)}
@@ -70,6 +74,12 @@ html, body, [class*="css"] {font-family:'Inter',sans-serif}
 .footer {background:linear-gradient(115deg,#081F3A,#124A78);color:#E6F1F8;padding:22px;
  border-radius:16px;margin-top:28px;text-align:center;border-top:4px solid #F3C84B}
 .footer a {color:#F3C84B!important;text-decoration:none;font-weight:800}
+.footer-links {display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 6px}
+.footer-links a {display:inline-block;background:linear-gradient(135deg,#F3C84B,#D4A017)!important;
+ color:#071A2F!important;-webkit-text-fill-color:#071A2F!important;border:2px solid #FFF1AC;
+ border-radius:10px;padding:10px 18px;text-decoration:none!important;font-weight:900!important;
+ box-shadow:0 5px 14px rgba(0,0,0,.22)}
+.footer-links a:hover {background:#FFF1AC!important;transform:translateY(-1px)}
 [data-testid="stMetric"] {background:#FFF;border:1px solid #DDE8F1;padding:13px;border-radius:14px;
  box-shadow:0 5px 14px rgba(18,54,84,.06)}
 .stTabs [data-baseweb="tab-list"] {gap:9px!important;flex-wrap:wrap!important;background:#D8E3ED!important;
@@ -86,10 +96,35 @@ html, body, [class*="css"] {font-family:'Inter',sans-serif}
 .stButton button,.stDownloadButton button {background:#0B3B67!important;color:white!important;border:1px solid #0B3B67!important;
  border-radius:10px!important;font-weight:800!important;min-height:42px}
 .stButton button:hover,.stDownloadButton button:hover {background:#D4A017!important;color:#071A2F!important;border-color:#D4A017!important}
+[data-testid="stLinkButton"] a {background:#0B3B67!important;color:white!important;border:2px solid #F3C84B!important;
+ border-radius:10px!important;font-weight:850!important;min-height:42px!important;text-decoration:none!important}
+[data-testid="stLinkButton"] a:hover {background:#D4A017!important;color:#071A2F!important;border-color:#FFF1AC!important}
+[data-testid="stLinkButton"] a p {color:inherit!important;-webkit-text-fill-color:inherit!important;font-weight:850!important}
+section[data-testid="stSidebar"] a:not([data-testid]) {
+ color:#F3C84B!important;-webkit-text-fill-color:#F3C84B!important;font-weight:850!important;
+ text-decoration:underline!important;text-decoration-color:#F3C84B!important;
+}
+section[data-testid="stSidebar"] a:not([data-testid]):hover {
+ color:#FFF1AC!important;-webkit-text-fill-color:#FFF1AC!important;
+}
 section[data-testid="stSidebar"] label p {color:#F3C84B!important;font-weight:850!important}
 section[data-testid="stSidebar"] div[data-testid="stButton"] button {background:linear-gradient(135deg,#F3C84B,#D4A017)!important;
  color:#071A2F!important;border:2px solid #F9DC79!important;font-weight:900!important;min-height:46px}
 section[data-testid="stSidebar"] div[data-testid="stButton"] button p {color:#071A2F!important;-webkit-text-fill-color:#071A2F!important}
+/* Sidebar selectboxes: keep the closed selected value visible on its white field */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+ background:#FFFFFF!important;border:2px solid #F3C84B!important;border-radius:10px!important;
+}
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] *,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"],
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"] *,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] input {
+ color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;opacity:1!important;font-weight:800!important;
+ text-shadow:none!important;
+}
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] svg {
+ fill:#0B2545!important;color:#0B2545!important;
+}
 div[data-testid="stSelectbox"] [data-baseweb="select"]>div {background:#FFF!important;border:2px solid #0B3B67!important;border-radius:10px!important}
 div[data-testid="stSelectbox"] [data-baseweb="select"] * {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;font-weight:750!important}
 [data-baseweb="popover"] [role="option"] {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;background:white!important}
@@ -211,11 +246,10 @@ with st.sidebar:
 """,
         unsafe_allow_html=True,
     )
-    st.markdown(
-        "[🌐 Academy](https://themountainpathacademy.com/)  \n"
-        "[in LinkedIn](https://www.linkedin.com/in/trichyravis/)  \n"
-        "[⌂ GitHub](https://github.com/trichyravis)"
-    )
+    st.markdown("### Connect")
+    st.link_button("🌐 Mountain Path Academy", "https://themountainpathacademy.com/", use_container_width=True)
+    st.link_button("in  Prof. V. Ravichandran — LinkedIn", "https://www.linkedin.com/in/trichyravis/", use_container_width=True)
+    st.link_button("⌂  GitHub — trichyravis", "https://github.com/trichyravis", use_container_width=True)
 
 
 st.markdown(
@@ -1047,9 +1081,11 @@ st.markdown(
 <div class="footer">
   <b style="color:#F3C84B;font-size:1.08rem">The Mountain Path Academy</b><br>
   Prof. V. Ravichandran · Financial Education through Excel, Analytics and Interactive Models<br><br>
-  <a href="https://themountainpathacademy.com/">Academy</a> &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/trichyravis/">LinkedIn</a> &nbsp;·&nbsp;
-  <a href="https://github.com/trichyravis">GitHub</a><br><br>
+  <div class="footer-links">
+    <a href="https://themountainpathacademy.com/" target="_blank">🌐 Mountain Path Academy</a>
+    <a href="https://www.linkedin.com/in/trichyravis/" target="_blank">in LinkedIn Profile</a>
+    <a href="https://github.com/trichyravis" target="_blank">⌂ GitHub Profile</a>
+  </div><br>
   <span style="font-size:.78rem;color:#BFD6E6">Educational project · Not investment advice · © 2026 The Mountain Path Academy</span>
 </div>
 """,
