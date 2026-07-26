@@ -39,11 +39,7 @@ st.markdown(
 html, body, [class*="css"] {font-family:'Inter',sans-serif}
 .stApp {background:linear-gradient(180deg,#F8FAFD 0%,#EAF1F7 100%)}
 [data-testid="stSidebar"] {background:linear-gradient(180deg,#081F3A,#124A78)}
-[data-testid="stSidebar"] {color:#F7FAFC}
-[data-testid="stSidebar"] h1,[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] p,[data-testid="stSidebar"] li,[data-testid="stSidebar"] small {
- color:#F7FAFC;
-}
+[data-testid="stSidebar"] * {color:#F7FAFC!important}
 .hero {background:linear-gradient(120deg,#071A2F 0%,#0B3B67 58%,#A97908 145%);
  padding:30px 34px;border-radius:22px;color:white;box-shadow:0 14px 34px rgba(7,26,47,.22);
  margin-bottom:16px;border:1px solid rgba(243,200,75,.35)}
@@ -94,20 +90,6 @@ section[data-testid="stSidebar"] label p {color:#F3C84B!important;font-weight:85
 section[data-testid="stSidebar"] div[data-testid="stButton"] button {background:linear-gradient(135deg,#F3C84B,#D4A017)!important;
  color:#071A2F!important;border:2px solid #F9DC79!important;font-weight:900!important;min-height:46px}
 section[data-testid="stSidebar"] div[data-testid="stButton"] button p {color:#071A2F!important;-webkit-text-fill-color:#071A2F!important}
-/* Sidebar selectboxes: keep the closed selected value visible on its white field */
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
- background:#FFFFFF!important;border:2px solid #F3C84B!important;border-radius:10px!important;
-}
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] *,
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"],
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"] *,
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] input {
- color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;opacity:1!important;font-weight:800!important;
- text-shadow:none!important;
-}
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] svg {
- fill:#0B2545!important;color:#0B2545!important;
-}
 div[data-testid="stSelectbox"] [data-baseweb="select"]>div {background:#FFF!important;border:2px solid #0B3B67!important;border-radius:10px!important}
 div[data-testid="stSelectbox"] [data-baseweb="select"] * {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;font-weight:750!important}
 [data-baseweb="popover"] [role="option"] {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;background:white!important}
