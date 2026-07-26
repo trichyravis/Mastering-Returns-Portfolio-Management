@@ -1,3 +1,4 @@
+
 from __future__ import annotations
 
 import io
@@ -89,6 +90,18 @@ section[data-testid="stSidebar"] label p {color:#F3C84B!important;font-weight:85
 section[data-testid="stSidebar"] div[data-testid="stButton"] button {background:linear-gradient(135deg,#F3C84B,#D4A017)!important;
  color:#071A2F!important;border:2px solid #F9DC79!important;font-weight:900!important;min-height:46px}
 section[data-testid="stSidebar"] div[data-testid="stButton"] button p {color:#071A2F!important;-webkit-text-fill-color:#071A2F!important}
+/* Sidebar selectboxes: keep the closed selected value visible on its white field */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+ background:#FFFFFF!important;border:2px solid #F3C84B!important;border-radius:10px!important;
+}
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] span,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] input,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] [data-testid="stMarkdownContainer"] p {
+ color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;opacity:1!important;font-weight:800!important;
+}
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] svg {
+ fill:#0B2545!important;color:#0B2545!important;
+}
 div[data-testid="stSelectbox"] [data-baseweb="select"]>div {background:#FFF!important;border:2px solid #0B3B67!important;border-radius:10px!important}
 div[data-testid="stSelectbox"] [data-baseweb="select"] * {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;font-weight:750!important}
 [data-baseweb="popover"] [role="option"] {color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;background:white!important}
