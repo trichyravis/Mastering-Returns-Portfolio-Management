@@ -39,7 +39,11 @@ st.markdown(
 html, body, [class*="css"] {font-family:'Inter',sans-serif}
 .stApp {background:linear-gradient(180deg,#F8FAFD 0%,#EAF1F7 100%)}
 [data-testid="stSidebar"] {background:linear-gradient(180deg,#081F3A,#124A78)}
-[data-testid="stSidebar"] * {color:#F7FAFC!important}
+[data-testid="stSidebar"] {color:#F7FAFC}
+[data-testid="stSidebar"] h1,[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,[data-testid="stSidebar"] li,[data-testid="stSidebar"] small {
+ color:#F7FAFC;
+}
 .hero {background:linear-gradient(120deg,#071A2F 0%,#0B3B67 58%,#A97908 145%);
  padding:30px 34px;border-radius:22px;color:white;box-shadow:0 14px 34px rgba(7,26,47,.22);
  margin-bottom:16px;border:1px solid rgba(243,200,75,.35)}
@@ -94,10 +98,12 @@ section[data-testid="stSidebar"] div[data-testid="stButton"] button p {color:#07
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] > div {
  background:#FFFFFF!important;border:2px solid #F3C84B!important;border-radius:10px!important;
 }
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] span,
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] input,
-section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] [data-testid="stMarkdownContainer"] p {
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] *,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"],
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [role="combobox"] *,
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] input {
  color:#0B2545!important;-webkit-text-fill-color:#0B2545!important;opacity:1!important;font-weight:800!important;
+ text-shadow:none!important;
 }
 section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] svg {
  fill:#0B2545!important;color:#0B2545!important;
